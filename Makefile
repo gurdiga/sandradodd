@@ -8,6 +8,7 @@ DOTFILES=\
 	.bashrc \
 	.bash_aliases \
 	.bashrc_local \
+	.gitconfig \
 	.droppy
 
 install:

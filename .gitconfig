@@ -1,0 +1,6 @@
+[user]
+name = Vlad GURDIGA
+email = gurdiga@gmail.com
+
+[pull]
+rebase=true
