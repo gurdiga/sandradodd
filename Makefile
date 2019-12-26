@@ -19,7 +19,15 @@ install: \
 	/etc/nginx/sites-enabled/default \
 	/usr/bin/unzip \
 	/usr/bin/certbot \
-	/usr/local/bin/droppy
+	/usr/local/bin/droppy \
+	/usr/bin/recode \
+	/usr/bin/uchardet
+
+/usr/bin/uchardet:
+	apt-get install uchardet
+
+/usr/bin/recode:
+	apt-get install recode
 
 /usr/local/bin/droppy: /usr/bin/node
 	npm install --global --production droppy
