@@ -2,17 +2,38 @@
 srcdir=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 default: install
+
 install: \
 	dotfiles \
-	nginx
+	/usr/sbin/nginx \
+	/etc/nginx/sites-enabled/default \
+	/usr/bin/unzip \
+	/usr/bin/certbot
 
-nginx: /usr/sbin/nginx /etc/nginx/sites-enabled/default
+/usr/bin/certbot: /usr/bin/add-apt-repository /etc/apt/sources.list.d/certbot-ubuntu-certbot-bionic.list
+	apt-get install python-certbot-nginx
+	touch $@
+	@echo Add this to crontab:
+	@echo
+	@echo '    17 7 * * * certbot renew --post-hook "systemctl reload nginx"'
+
+/etc/apt/sources.list.d/certbot-ubuntu-certbot-bionic.list:
+	add-apt-repository ppa:certbot/certbot
+	apt-get update
+	touch $@
+
+/usr/bin/add-apt-repository:
+	apt-get install software-properties-common
+	touch $@
 
 /usr/sbin/nginx:
 	apt-get install nginx
 
 /etc/nginx/sites-enabled/default:
 	ln -svf $(srcdir)etc/nginx/sites-enabled/default $@
+
+/usr/bin/unzip:
+	apt-get install unzip
 
 DOTFILES=\
 	.bashrc \
