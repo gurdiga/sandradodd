@@ -12,7 +12,7 @@ DOTFILES=\
 
 install:
 	for f in $(DOTFILES); do
-		ln -vs $(srcdir)$$f ~/
+		ln -vfs $(srcdir)$$f ~/
 	done
 
 SITE_ROOT=/var/www/site/
