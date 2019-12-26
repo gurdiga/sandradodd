@@ -21,7 +21,11 @@ install: \
 	/usr/bin/certbot \
 	/usr/local/bin/droppy \
 	/usr/bin/recode \
-	/usr/bin/uchardet
+	/usr/bin/uchardet \
+	/usr/bin/htop
+
+/usr/bin/htop:
+	apt-get install htop
 
 /usr/bin/uchardet:
 	apt-get install uchardet
