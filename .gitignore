@@ -1,2 +1,4 @@
 .*.swp
 .bash_history
+.droppy/config/db.json
+.droppy/config/droppy.pid
