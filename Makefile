@@ -3,6 +3,16 @@ srcdir=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 default: install
 
+update:
+	apt-get update \
+		&& apt-get upgrade \
+		&& apt-get dist-upgrade \
+		&& apt-get autoremove
+	npm update --global --production
+
+check-nginx-config:
+	nginx -t
+
 install: \
 	dotfiles \
 	/usr/sbin/nginx \
