@@ -18,7 +18,17 @@ install: \
 	/usr/sbin/nginx \
 	/etc/nginx/sites-enabled/default \
 	/usr/bin/unzip \
-	/usr/bin/certbot
+	/usr/bin/certbot \
+	/usr/local/bin/droppy
+
+/usr/local/bin/droppy: /usr/bin/node
+	npm install --global --production droppy
+	touch $@
+	@echo Add something like this to crontab:
+	@echo '    @reboot cd sandradodd && make start-droppy'
+
+/usr/bin/node:
+	apt-get install nodejs
 
 /usr/bin/certbot: /usr/bin/add-apt-repository /etc/apt/sources.list.d/certbot-ubuntu-certbot-bionic.list
 	apt-get install python-certbot-nginx
@@ -58,8 +68,6 @@ dotfiles:
 	done
 
 SITE_ROOT=/var/www/site/
-
-start: start-droppy
 
 start-droppy:
 	/usr/local/bin/droppy start \
