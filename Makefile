@@ -1,8 +1,18 @@
 .ONESHELL:
+srcdir=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 default: install
+install: \
+	dotfiles \
+	nginx
 
-srcdir=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+nginx: /usr/sbin/nginx /etc/nginx/sites-enabled/default
+
+/usr/sbin/nginx:
+	apt-get install nginx
+
+/etc/nginx/sites-enabled/default:
+	ln -svf $(srcdir)etc/nginx/sites-enabled/default $@
 
 DOTFILES=\
 	.bashrc \
@@ -11,7 +21,7 @@ DOTFILES=\
 	.gitconfig \
 	.droppy
 
-install:
+dotfiles:
 	for f in $(DOTFILES); do
 		ln -vfs $(srcdir)$$f ~/
 	done
