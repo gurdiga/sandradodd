@@ -1,0 +1,32 @@
+{
+  "listeners": [
+    {
+      "host": [
+        "127.0.0.1"
+      ],
+      "port": 8989,
+      "protocol": "https",
+      "cert": "/etc/letsencrypt/live/admin.sandradodd.com/fullchain.pem",
+      "key": "/etc/letsencrypt/live/admin.sandradodd.com/privkey.pem",
+      "hsts": 31536000
+    }
+  ],
+  "public": false,
+  "timestamps": true,
+  "linkLength": 5,
+  "linkExtensions": false,
+  "logLevel": 2,
+  "maxFileSize": 104857600,
+  "updateInterval": 1000,
+  "pollingInterval": 0,
+  "keepAlive": 20000,
+  "allowFrame": false,
+  "readOnly": false,
+  "compression": true,
+  "ignorePatterns": [
+    ".git",
+    "archive"
+  ],
+  "watch": false,
+  "headers": {}
+}

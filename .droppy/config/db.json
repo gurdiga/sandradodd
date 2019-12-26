@@ -1,0 +1,82 @@
+{
+  "users": {
+    "sandra": {
+      "hash": "93f25d953ff8ebea81cb5bebdd51a09f9c552e132581fd2a77c3f1c5148241f4$f74f0a9d",
+      "privileged": false
+    }
+  },
+  "sessions": {
+    "EItWjvAogWOkWKKkzZ04DJDQe5p9YodRlcURTri1OLG4k7PR": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1575124686294
+    },
+    "q5Dsyae7L0dNFGBMa1eHIg93ztbhGvbggjGKWiNYoxZVEL2e": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1575125334695
+    },
+    "qmqYzC2jz+Pw5zd0xVCtg9XHqqEuL7i20i0jp39lF1zmEmpK": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1575251370955
+    },
+    "Fgx8Yfzp/rjcTIPYrLrDUQtUKhW0nPvADrbHrGHLk03TslPL": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1575252416762
+    },
+    "Zy5HO3IU8sgmdbWcQCj/YSWTGCTQRBIAdSAcms2diSpu3nuC": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1576486866985
+    },
+    "gG4CbxI/I/GrPyaVVBZsCZxV1SozcUBs/1M1ASL8mMUqOZ6b": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1576517599660
+    },
+    "tk3mIxoDNP8BeSfHHv2ILeMI75FWSgbzNoBG8NR7bwkK8UkC": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1576747009224
+    },
+    "bVrZQEqKb8unNNfZAXmVOmW8HcAXfnahztzLS6Uwix+8bpwk": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1576645088724
+    },
+    "C5ZpnU2IuDC+HiBdCcgQHSbcImjQJp1WYQ7rnjjPaAx+JaQN": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1576833025119
+    },
+    "6We5yeISxIPefu1ifG2EQkpMGiWhgpfzErnMeXfREo18Vf/J": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1577046330746
+    },
+    "cjCyTB72xj66OGdJYpUhamXS1LEXl85P0IWgSrXbXsoY/7sg": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1577047666077
+    },
+    "osJs+S39yUXsZdvUae3jhcGNdv/TDiZLY78eLKRiY/tZlhIZ": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1577327081244
+    },
+    "Q8xZ1JxLVMz9uWwjuvH6tyWrB2hqsTXbtzIvtJIaxF649oDa": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1577322000297
+    },
+    "5tbBfqfBEnzWHec8byf8aSD2LV9CWU8IJNyOcKrzBPGyZqJ4": {
+      "privileged": false,
+      "username": "sandra",
+      "lastSeen": 1577326235239
+    }
+  },
+  "links": {},
+  "dhparam": "-----BEGIN DH PARAMETERS-----\nMIIBBwKCAQD9Yzefd8c+yE5rj265VuVgThc+bpCZJL8GZDIlR8a6AOszQ7T7TrkQ\n3jVJ0gBcMsdbVh3+3yVdIefx7diLZ3WzmHlDFRakV2M8OEFQo5WhbfY0ooXfAul9\nNzJW9EQc1clKygzcZhtuLL2Vj37TFQrhiB9iptRm93sJHmtk4fEOzS4vF2yEmWkf\nsFQrlbi3JE0e6oSVEobfVxGJXiLgzPiMbgCNmT+wY2VBszJfl1Od4rk2alawrs6N\nXq/PNAgWecaNberEK31BptrZLjNoQDTn3mpDJZnXYK8ksEuUSCcBmiICCRR+1dPN\nnqn7GjPbKrLj5kSJArtZF4Nl2OZXGu+jAgEC\n-----END DH PARAMETERS-----"
+}
