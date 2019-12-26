@@ -74,10 +74,10 @@ start-droppy:
 		--configdir /root/.droppy/config/ \
 		--filesdir $(SITE_ROOT) \
 		--daemon
+stop-droppy:
+	pkill -F $$HOME/.droppy/config/droppy.pid
 
-restart-droppy:
-	pkill droppy
-	make start
+restart-droppy: stop-droppy start-droppy
 
 check-npm-outdates:
 	npm outdated -global
