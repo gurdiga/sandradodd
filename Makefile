@@ -102,3 +102,7 @@ new-ssl-certificate:
 	#
 	#   certbot certonly --nginx
 	#
+
+logs:
+	du -sh /var/log
+	du -sh /var/log/* | sort -rh | head
