@@ -24,8 +24,7 @@
   "readOnly": false,
   "compression": true,
   "ignorePatterns": [
-    ".git",
-    "archive"
+    ".git"
   ],
   "watch": false,
   "headers": {}
