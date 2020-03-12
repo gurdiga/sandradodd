@@ -91,6 +91,11 @@ stop-droppy:
 
 restart-droppy: stop-droppy start-droppy
 
+reset-droppy-password:
+	@read -p "New password for sandra: " password; \
+	droppy add sandra "$$password" p
+	make restart-droppy
+
 check-npm-outdates:
 	npm outdated -global
 
@@ -106,3 +111,7 @@ new-ssl-certificate:
 logs:
 	du -sh /var/log
 	du -sh /var/log/* | sort -rh | head
+
+email: smtp
+smtp:
+	# https://hakanu.net/linux/2017/04/23/making-crontab-send-email-through-mailgun/
