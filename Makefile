@@ -97,7 +97,7 @@ reset-droppy-password:
 	make restart-droppy
 
 check-npm-outdates:
-	npm outdated -global
+	@npm outdated -global
 
 new-ssl-certificate:
 	# - Comment out SSH-related lines in nginx config
