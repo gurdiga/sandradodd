@@ -96,6 +96,11 @@ reset-droppy-password:
 	droppy add sandra "$$password" p
 	make restart-droppy
 
+reset-droppy-password-holly:
+	@read -p "New password for HollyDodd: " password; \
+	droppy add HollyDodd "$$password" p
+	make restart-droppy
+
 check-npm-outdates:
 	@npm outdated -global
 
