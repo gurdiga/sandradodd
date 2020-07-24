@@ -1,0 +1,5 @@
+MAILTO=gurdiga@gmail.com
+17 7 * * * certbot renew --post-hook "systemctl reload nginx" --quiet | ifne mail -s 'SandraDodd.com: certbot' gurdiga@gmail.com
+@reboot cd sandradodd && make start-droppy
+@monthly cd sandradodd && make check-npm-outdates | ifne mail -s 'SandraDodd.com: outdated NPM packages' gurdiga@gmail.com
+
