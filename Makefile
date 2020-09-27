@@ -91,6 +91,9 @@ stop-droppy:
 
 restart-droppy: stop-droppy start-droppy
 
+restart-nginx:
+	systemctl restart nginx
+
 reset-droppy-password:
 	@read -p "New password for sandra: " password; \
 	droppy add sandra "$$password" p
