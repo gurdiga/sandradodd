@@ -29,6 +29,14 @@ server {
 	return 301 $scheme://sandradodd.com$request_uri;
 }
 
+# From https://www.nginx.com/wp-content/uploads/2017/07/Complete-NGINX-Cookbook-2019.pdf
+map $request_method $cors_method {
+	OPTIONS 11;
+	GET 1;
+	POST 1;
+	default 0;
+}
+
 server {
         # SSL configuration
         #
@@ -47,11 +55,29 @@ server {
         server_name _;
 
         location / {
+
 		autoindex on;
 		ssi on;
 
                 try_files $uri $uri/ $uri.html $uri.gif $uri.GIF $uri.jpg $uri.jpeg $uri.JPG $uri.JPEG =404;
         }
+
+	location ^~ /albums/ {
+		autoindex on;
+
+		if ($cors_method ~ '1') {
+			add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS';
+			add_header 'Access-Control-Allow-Origin' '*';
+			add_header 'Access-Control-Allow-Headers' 'DNT, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type';
+		}
+
+		if ($cors_method = '11') {
+			add_header 'Access-Control-Max-Age' 1728000;
+			add_header 'Content-Type' 'text/plain; charset=UTF-8';
+			add_header 'Content-Length' 0;
+			return 204;
+		}
+	}
 
 	error_page 404 /e404.html;
 }
