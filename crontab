@@ -3,3 +3,5 @@ MAILTO=gurdiga@gmail.com
 @reboot cd sandradodd && make start-droppy
 @monthly cd sandradodd && make check-npm-outdates | ifne mail -s 'SandraDodd.com: outdated NPM packages' gurdiga@gmail.com
 
+# reboot weekly on Sunday at 6am GMT-6
+0 0 * * 0 reboot
