@@ -1,7 +1,8 @@
 .ONESHELL:
 srcdir=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
-default: install
+default:
+	@echo make what?
 
 update:
 	apt-get update \
