@@ -62,7 +62,7 @@ server {
                 try_files $uri $uri/ $uri.html $uri.gif $uri.GIF $uri.jpg $uri.jpeg $uri.JPG $uri.JPEG =404;
         }
 
-	location ^~ /albums/ {
+	location ~* /(albums|vlad)/ {
 		autoindex on;
 
 		if ($cors_method ~ '1') {
