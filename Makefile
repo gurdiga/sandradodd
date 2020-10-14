@@ -83,7 +83,7 @@ dotfiles:
 SITE_ROOT=/var/www/site/
 
 start-droppy:
-	/usr/local/bin/droppy start \
+	/root/.nvm/versions/node/v12.18.4/bin/droppy start \
 		--configdir /root/.droppy/config/ \
 		--filesdir $(SITE_ROOT) \
 		--daemon
