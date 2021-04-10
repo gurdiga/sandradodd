@@ -1,0 +1,23 @@
+{
+  "name": "sandradodd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gurdiga/sandradodd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gurdiga/sandradodd/issues"
+  },
+  "homepage": "https://github.com/gurdiga/sandradodd#readme",
+  "dependencies": {
+    "droppy": "^12.2.0"
+  }
+}
