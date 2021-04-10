@@ -1,6 +1,11 @@
 .ONESHELL:
 srcdir=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
+NODE=/root/.nvm/versions/node/v14.16.1/bin/node
+NPM=/root/.nvm/versions/node/v14.16.1/bin/npm
+DROPPY_EXECUTABLE=./node_modules/.bin/droppy
+DROPPY=$(NODE) $(DROPPY_EXECUTABLE)
+
 default:
 	@echo make what?
 
@@ -20,7 +25,7 @@ install: \
 	/etc/nginx/sites-enabled/default \
 	/usr/bin/unzip \
 	/usr/bin/certbot \
-	/usr/local/bin/droppy \
+	$(DROPPY_EXECUTABLE) \
 	/usr/bin/recode \
 	/usr/bin/uchardet \
 	/usr/bin/htop
@@ -34,14 +39,14 @@ install: \
 /usr/bin/recode:
 	apt-get install recode
 
-/usr/local/bin/droppy: /usr/bin/node
-	npm install --global --production droppy
+$(DROPPY_EXECUTABLE):
+	npm install
 	touch $@
 	@echo Add something like this to crontab:
 	@echo '    @reboot cd sandradodd && make start-droppy'
 
-/usr/bin/node:
-	apt-get install nodejs
+$(NODE):
+	@echo 'Use nvm to install the latest LTS Node.'
 
 /usr/bin/certbot: /usr/bin/add-apt-repository /etc/apt/sources.list.d/certbot-ubuntu-certbot-bionic.list
 	apt-get install python-certbot-nginx
@@ -83,7 +88,7 @@ dotfiles:
 SITE_ROOT=/var/www/site/
 
 start-droppy:
-	/root/.nvm/versions/node/v12.18.4/bin/droppy start \
+	$(DROPPY) start \
 		--configdir /root/.droppy/config/ \
 		--filesdir $(SITE_ROOT) \
 		--daemon
@@ -97,16 +102,16 @@ restart-nginx:
 
 reset-droppy-password:
 	@read -p "New password for sandra: " password; \
-	droppy add sandra "$$password" p
+	$(DROPPY) add sandra "$$password" p
 	make restart-droppy
 
 reset-droppy-password-holly:
 	@read -p "New password for HollyDodd: " password; \
-	droppy add HollyDodd "$$password" p
+	$(DROPPY) add HollyDodd "$$password" p
 	make restart-droppy
 
 check-npm-outdates:
-	@npm outdated -global
+	@$(NPM) outdated --depth 99
 
 new-ssl-certificate:
 	# - Comment out SSH-related lines in nginx config
