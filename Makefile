@@ -133,7 +133,7 @@ smtp:
 	# https://hakanu.net/linux/2017/04/23/making-crontab-send-email-through-mailgun/
 
 commit-changes:
-	cd /var/www/site/
+	@cd /var/www/site/
 	if ! git diff-index --quiet HEAD --; then
 		git add
 		git commit -m "`date`"
