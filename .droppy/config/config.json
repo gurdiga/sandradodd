@@ -24,7 +24,7 @@
   "allowFrame": false,
   "readOnly": false,
   "ignorePatterns": [
-    ".git"
+    "/var/www/site/.git"
   ],
   "watch": false,
   "headers": {}
