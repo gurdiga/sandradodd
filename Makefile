@@ -93,7 +93,9 @@ start-droppy:
 	$(DROPPY) start \
 		--configdir /root/.droppy/config/ \
 		--filesdir $(SITE_ROOT) \
+		--log /var/log/droppy.log \
 		--daemon
+
 stop-droppy:
 	pkill -F $$HOME/.droppy/config/droppy.pid
 
