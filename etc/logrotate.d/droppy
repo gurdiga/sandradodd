@@ -1,0 +1,13 @@
+/var/log/droppy.log {
+	size 10M
+	missingok
+	rotate 14
+	compress
+	delaycompress
+	notifempty
+	create 0640 root root
+	postrotate
+		cd /root/sandradodd && make start-droppy
+	endscript
+}
+

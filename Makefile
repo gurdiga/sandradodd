@@ -25,6 +25,7 @@ install: \
 	dotfiles \
 	/usr/sbin/nginx \
 	/etc/nginx/sites-enabled/default \
+	/etc/logrotate.d/droppy \
 	/usr/bin/unzip \
 	/usr/bin/certbot \
 	$(DROPPY_EXECUTABLE) \
@@ -71,6 +72,9 @@ $(NODE):
 
 /etc/nginx/sites-enabled/default:
 	ln -svf $(srcdir)etc/nginx/sites-enabled/default $@
+
+/etc/logrotate.d/droppy:
+	ln -svf $(srcdir)etc/logrotate.d/droppy $@
 
 /usr/bin/unzip:
 	apt-get install unzip
