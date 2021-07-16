@@ -136,8 +136,8 @@ smtp:
 
 commit-changes:
 	@cd /var/www/site/
+	git add .
 	if ! git diff-index --quiet HEAD --; then
-		git add .
 		git commit -m "`date`"
 		git push
 	fi
