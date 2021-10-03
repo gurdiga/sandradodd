@@ -47,7 +47,7 @@ server {
         ssl_certificate /etc/letsencrypt/live/sandradodd.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/sandradodd.com/privkey.pem;
 
-        root /var/www/site;
+        root /mnt/volume_nyc3_01/site;
 
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
@@ -55,14 +55,19 @@ server {
         server_name _;
 
         location / {
-
 		autoindex on;
 		ssi on;
 
                 try_files $uri $uri/ $uri.html $uri.gif $uri.GIF $uri.jpg $uri.jpeg $uri.JPG $uri.JPEG =404;
         }
 
-	location ~* /(albums|vlad)/ {
+	location ~ /(noor|speaking|conference|photos|archive)/ {
+		autoindex on;
+		root /var/www;
+	}
+
+	location /albums/ {
+		root /var/www;
 		autoindex on;
 
 		if ($cors_method ~ '1') {
