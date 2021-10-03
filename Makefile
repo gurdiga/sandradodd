@@ -91,7 +91,7 @@ dotfiles:
 		ln -vfs $(srcdir)$$f ~/
 	done
 
-SITE_ROOT=/var/www/site/
+SITE_ROOT=/mnt/volume_nyc3_01/site
 
 start-droppy:
 	$(DROPPY) start \

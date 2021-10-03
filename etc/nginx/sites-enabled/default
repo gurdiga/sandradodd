@@ -61,7 +61,7 @@ server {
                 try_files $uri $uri/ $uri.html $uri.gif $uri.GIF $uri.jpg $uri.jpeg $uri.JPG $uri.JPEG =404;
         }
 
-	location ~ /(noor|speaking|conference|photos|archive)/ {
+	location /archive/ {
 		autoindex on;
 		root /var/www;
 	}
