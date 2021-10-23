@@ -91,7 +91,7 @@ dotfiles:
 		ln -vfs $(srcdir)$$f ~/
 	done
 
-SITE_ROOT=/mnt/volume_nyc3_01/site
+SITE_ROOT=/var/www/site
 
 start-droppy:
 	$(DROPPY) start \
@@ -139,7 +139,7 @@ smtp:
 	# https://hakanu.net/linux/2017/04/23/making-crontab-send-email-through-mailgun/
 
 commit-changes:
-	@cd /var/www/site/
+	@cd $(SITE_ROOT)
 	git add .
 	if ! git diff-index --quiet HEAD --; then
 		git commit -m "`date`"
