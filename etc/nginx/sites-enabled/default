@@ -37,6 +37,10 @@ map $request_method $cors_method {
 	default 0;
 }
 
+map $uri $uri_without_extension {
+   ~(?<captured_uri_without_extension>^/.+).html$ "$captured_uri_without_extension/index.html";
+}
+
 server {
         # SSL configuration
         #
@@ -53,12 +57,13 @@ server {
         index index.html index.htm index.nginx-debian.html;
 
         server_name _;
+	add_header 'X-Test2' "something: [$uri]"; # Just for tests
 
         location / {
 		autoindex on;
 		ssi on;
 
-                try_files $uri $uri/ $uri.html $uri.gif $uri.GIF $uri.jpg $uri.jpeg $uri.JPG $uri.JPEG =404;
+                try_files $uri $uri_without_extension $uri/ $uri.html $uri.gif $uri.GIF $uri.jpg $uri.jpeg $uri.JPG $uri.JPEG =404;
         }
 
 	location /archive/ {
