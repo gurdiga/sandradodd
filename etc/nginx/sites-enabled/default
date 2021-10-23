@@ -51,7 +51,7 @@ server {
         ssl_certificate /etc/letsencrypt/live/sandradodd.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/sandradodd.com/privkey.pem;
 
-        root /mnt/volume_nyc3_01/site;
+        root /var/www/site;
 
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
@@ -66,13 +66,7 @@ server {
                 try_files $uri $uri_without_extension $uri/ $uri.html $uri.gif $uri.GIF $uri.jpg $uri.jpeg $uri.JPG $uri.JPEG =404;
         }
 
-	location /archive/ {
-		autoindex on;
-		root /var/www;
-	}
-
 	location /albums/ {
-		root /var/www;
 		autoindex on;
 
 		if ($cors_method ~ '1') {
