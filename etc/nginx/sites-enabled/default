@@ -83,6 +83,10 @@ server {
 		}
 	}
 
+	location ~ /\.git {
+		return 404;
+	}
+
 	error_page 404 /e404.html;
 }
 
