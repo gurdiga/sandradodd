@@ -24,7 +24,7 @@
   "allowFrame": false,
   "readOnly": false,
   "ignorePatterns": [
-    "/mnt/volume_nyc3_01/site/.git"
+    "/var/www/site/.git"
   ],
   "watch": false,
   "headers": {}
