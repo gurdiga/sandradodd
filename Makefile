@@ -142,6 +142,9 @@ commit-changes:
 	@cd $(SITE_ROOT)
 	git add .
 	if ! git diff-index --quiet HEAD --; then
-		git commit -m "`date`"
+		GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519' \
+		git commit -m "`date`" \
+			--author="Sandra Dodd <sandra@sandradodd.com>"
 		git push
+		echo https://github.com/gurdiga/sandradodd.com/commit/`git rev-parse HEAD`
 	fi
