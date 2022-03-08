@@ -3,8 +3,9 @@ SHELL=/bin/bash
 
 srcdir=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
-NODE=/root/.nvm/versions/node/v14.16.1/bin/node
-NPM=/root/.nvm/versions/node/v14.16.1/bin/npm
+NODE_VERSION=`cat .nvmrc`
+NODE=/root/.nvm/versions/node/$(NODE_VERSION)/bin/node
+NPM=/root/.nvm/versions/node/$(NODE_VERSION)/bin/npm
 DROPPY_EXECUTABLE=./node_modules/.bin/droppy
 DROPPY=$(NODE) $(DROPPY_EXECUTABLE)
 
