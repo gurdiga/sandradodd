@@ -149,3 +149,8 @@ commit-changes:
 		git push
 		echo https://github.com/gurdiga/sandradodd.com/commit/`git rev-parse HEAD`
 	fi
+
+update-droppy:
+	echo "Change droppy version in package.json here"
+	echo "nvm use"
+	echo "npm i"
