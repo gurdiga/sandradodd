@@ -16,7 +16,7 @@
   "linkLength": 5,
   "linkExtensions": false,
   "logLevel": 2,
-  "maxFileSize": 104857600,
+  "maxFileSize": 0,
   "updateInterval": 1000,
   "pollingInterval": 0,
   "keepAlive": 20000,
