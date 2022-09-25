@@ -151,6 +151,5 @@ commit-changes:
 	fi
 
 update-droppy:
-	echo "Change droppy version in package.json here"
 	echo "nvm use"
-	echo "npm i"
+	echo "npm i github:gurdiga/droppy#12.4.6"
