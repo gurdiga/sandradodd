@@ -2,7 +2,7 @@ MAILTO=gurdiga@gmail.com
 MAILFROM=cron@sandradodd.com
 SHELL=/bin/bash
 
-12 12 * * 1 certbot renew --post-hook "systemctl reload nginx" --quiet |& ifne mail -s 'SandraDodd.com: certbot' gurdiga@gmail.com
+@weekly certbot renew --post-hook "systemctl reload nginx" --quiet |& ifne mail -s 'SandraDodd.com: certbot' gurdiga@gmail.com
 @reboot cd sandradodd && make start-droppy |& ifne mail -s 'SandraDodd.com: start-droppy' gurdiga@gmail.com
 @monthly cd sandradodd && make check-npm-outdates |& ifne mail -s 'SandraDodd.com: outdated NPM packages' gurdiga@gmail.com
 @daily cd sandradodd && make commit-changes |& ifne mail -s 'SandraDodd.com: website changes' gurdiga@gmail.com
