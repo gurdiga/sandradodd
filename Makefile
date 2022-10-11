@@ -55,9 +55,7 @@ $(NODE):
 /usr/bin/certbot: /usr/bin/add-apt-repository /etc/apt/sources.list.d/certbot-ubuntu-certbot-bionic.list
 	apt-get install python-certbot-nginx
 	touch $@
-	@echo Add this to crontab:
-	@echo
-	@echo '    17 7 * * * certbot renew --post-hook "systemctl reload nginx"'
+	@echo There should also be an entry in the crontab file here.
 
 /etc/apt/sources.list.d/certbot-ubuntu-certbot-bionic.list:
 	add-apt-repository ppa:certbot/certbot
