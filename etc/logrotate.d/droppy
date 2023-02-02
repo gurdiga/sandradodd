@@ -1,7 +1,7 @@
 /var/log/droppy.log {
-	size 10M
+	rotate 180
+	daily
 	missingok
-	rotate 14
 	compress
 	delaycompress
 	notifempty
