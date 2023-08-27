@@ -12,11 +12,15 @@ DROPPY=$(NODE) $(DROPPY_EXECUTABLE)
 default:
 	@echo make what?
 
-update:
+update-deps: update-apt-deps update-npm-deps
+
+update-apt-deps:
 	apt-get update \
 		&& apt-get upgrade \
 		&& apt-get dist-upgrade \
 		&& apt-get autoremove
+
+update-npm-deps:
 	npm update --global --production
 
 check-nginx-config:
