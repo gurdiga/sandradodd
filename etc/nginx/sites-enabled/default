@@ -83,6 +83,11 @@ server {
 		}
 	}
 
+	location /vlad/sample-images/ {
+		autoindex on;
+		add_header Access-Control-Allow-Origin *;
+	}
+
 	location ~ /\.git {
 		return 404;
 	}
