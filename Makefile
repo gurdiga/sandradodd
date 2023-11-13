@@ -155,3 +155,7 @@ commit-changes:
 update-droppy:
 	echo "nvm use"
 	echo "npm i github:gurdiga/droppy#12.4.6"
+
+.PHONY: crontab
+crontab:
+	crontab < crontab
