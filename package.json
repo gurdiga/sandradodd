@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/gurdiga/sandradodd#readme",
   "dependencies": {
-    "droppy": "gurdiga/droppy#12.4.9"
+    "droppy": "github:gurdiga/droppy#12.4.10"
   }
 }
