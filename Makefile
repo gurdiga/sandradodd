@@ -4,8 +4,8 @@ SHELL=/bin/bash
 srcdir=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 NODE_VERSION=`cat .nvmrc`
-NODE=/root/.nvm/versions/node/$(NODE_VERSION)/bin/node
-NPM=/root/.nvm/versions/node/$(NODE_VERSION)/bin/npm
+NODE=~/.nvm/versions/node/$(NODE_VERSION)/bin/node
+NPM=~/.nvm/versions/node/$(NODE_VERSION)/bin/npm
 DROPPY_EXECUTABLE=./node_modules/.bin/droppy
 DROPPY=$(NODE) $(DROPPY_EXECUTABLE)
 
@@ -98,7 +98,7 @@ SITE_ROOT=/var/www/site
 
 start-droppy:
 	$(DROPPY) start \
-		--configdir /root/.droppy/config/ \
+		--configdir ~/.droppy/config/ \
 		--filesdir $(SITE_ROOT) \
 		--log /var/log/droppy.log \
 		--daemon
