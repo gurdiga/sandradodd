@@ -16,6 +16,8 @@
 # Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
 ##
 
+more_set_headers 'Server: Apache'; #  ;-)
+
 server {
         listen 80 default_server;
         listen [::]:80 default_server;
@@ -103,7 +105,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/admin.sandradodd.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/admin.sandradodd.com/privkey.pem;
-   
+
 	location / {
 		proxy_pass https://127.0.0.1:8989$request_uri;
 
