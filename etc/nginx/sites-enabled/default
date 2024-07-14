@@ -53,7 +53,11 @@ server {
         index index.html index.htm index.nginx-debian.html;
 
         server_name _;
-	# add_header 'X-Test2' "something: [$uri]"; # Just for tests
+	    # add_header 'X-Debug' "[$host]";
+
+        if ($host != 'sandradodd.com')  {
+                return 301 https://sandradodd.com$request_uri;
+        }
 
         location / {
 		autoindex on;
