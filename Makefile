@@ -9,6 +9,9 @@ NPM=~/.nvm/versions/node/$(NODE_VERSION)/bin/npm
 DROPPY_EXECUTABLE=./node_modules/.bin/droppy
 DROPPY=$(NODE) $(DROPPY_EXECUTABLE)
 
+update-droppy-fork:
+	@echo "npm i github:gurdiga/droppy#12.4.14"
+
 default:
 	@echo make what?
 
