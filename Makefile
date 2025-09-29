@@ -162,3 +162,11 @@ update-droppy:
 .PHONY: crontab
 crontab:
 	crontab < crontab
+
+backup:
+	rsync \
+		-avz \
+		--exclude='albums/' \
+		--exclude='archive/' \
+		root@ssh.sandradodd.com:/var/www/site/ \
+		~/tmp/sandradodd.com-backup/
