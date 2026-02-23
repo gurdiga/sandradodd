@@ -10,9 +10,7 @@ DROPPY_EXECUTABLE=./node_modules/.bin/droppy
 DROPPY=$(NODE) $(DROPPY_EXECUTABLE)
 
 update-droppy:
-	@#silent
-	echo "nvm use"
-	echo "npm i $(shell jq .dependencies.droppy package.json)"
+	@nvm use && npm i $(shell jq .dependencies.droppy package.json)
 
 default:
 	@echo make what?
