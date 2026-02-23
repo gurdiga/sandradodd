@@ -9,8 +9,10 @@ NPM=~/.nvm/versions/node/$(NODE_VERSION)/bin/npm
 DROPPY_EXECUTABLE=./node_modules/.bin/droppy
 DROPPY=$(NODE) $(DROPPY_EXECUTABLE)
 
-update-droppy-fork:
-	@echo "npm i github:gurdiga/droppy#12.4.14"
+update-droppy:
+	@#silent
+	echo "nvm use"
+	echo "npm i $(shell jq .dependencies.droppy package.json)"
 
 default:
 	@echo make what?
@@ -154,10 +156,6 @@ commit-changes:
 		git push
 		echo https://github.com/gurdiga/sandradodd.com/commit/`git rev-parse HEAD`
 	fi
-
-update-droppy:
-	echo "nvm use"
-	echo "npm i github:gurdiga/droppy#12.4.6"
 
 .PHONY: crontab
 crontab:
