@@ -166,3 +166,7 @@ backup:
 		--exclude='archive/' \
 		root@ssh.sandradodd.com:/var/www/site/ \
 		~/tmp/sandradodd.com-backup/
+
+e: edit
+edit:
+	code -n .
