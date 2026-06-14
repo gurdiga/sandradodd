@@ -50,6 +50,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/sandradodd.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/sandradodd.com/privkey.pem;
+        ssl_protocols TLSv1.2 TLSv1.3;
 
         # Security Headers
         add_header X-Content-Type-Options "nosniff" always;
@@ -111,6 +112,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/admin.sandradodd.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/admin.sandradodd.com/privkey.pem;
+        ssl_protocols TLSv1.2 TLSv1.3;
 
 	location / {
 		proxy_pass https://127.0.0.1:8989$request_uri;
