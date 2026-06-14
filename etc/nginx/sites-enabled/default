@@ -17,6 +17,7 @@
 ##
 
 more_set_headers 'Server: Apache'; #  ;-)
+server_tokens off;
 
 server {
         listen 80 default_server;
