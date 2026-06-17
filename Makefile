@@ -35,6 +35,7 @@ install: \
 	/etc/nginx/sites-enabled/default \
 	/etc/logrotate.d/droppy \
 	/etc/apticron/apticron.conf \
+	/etc/cron.d/apticron \
 	/usr/bin/unzip \
 	/usr/bin/certbot \
 	$(DROPPY_EXECUTABLE) \
@@ -85,6 +86,9 @@ $(NODE):
 
 /etc/apticron/apticron.conf:
 	ln -svf $(srcdir)etc/apticron/apticron.conf $@
+
+/etc/cron.d/apticron:
+	ln -svf $(srcdir)etc/cron.d/apticron $@
 
 /usr/bin/unzip:
 	apt-get install unzip
