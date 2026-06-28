@@ -9,9 +9,6 @@ NPM=~/.nvm/versions/node/$(NODE_VERSION)/bin/npm
 DROPPY_EXECUTABLE=./node_modules/.bin/droppy
 DROPPY=$(NODE) $(DROPPY_EXECUTABLE)
 
-update-droppy:
-	@source ~/.nvm/nvm.sh && npm i $(shell jq .dependencies.droppy package.json)
-
 default:
 	@echo make what?
 
