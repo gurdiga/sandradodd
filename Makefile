@@ -33,6 +33,7 @@ install: \
 	dotfiles \
 	/usr/sbin/nginx \
 	/etc/nginx/sites-enabled/default \
+	/etc/nginx/conf.d/cloudflare-realip.conf \
 	/etc/logrotate.d/droppy \
 	/etc/apticron/apticron.conf \
 	/etc/cron.d/apticron \
@@ -80,6 +81,9 @@ $(NODE):
 
 /etc/nginx/sites-enabled/default:
 	ln -svf $(srcdir)etc/nginx/sites-enabled/default $@
+
+/etc/nginx/conf.d/cloudflare-realip.conf:
+	ln -svf $(srcdir)etc/nginx/conf.d/cloudflare-realip.conf $@
 
 /etc/logrotate.d/droppy:
 	ln -svf $(srcdir)etc/logrotate.d/droppy $@
