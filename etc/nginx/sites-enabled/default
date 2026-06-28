@@ -108,6 +108,7 @@ server {
 # credential-stuffing/brute-force against its password-only auth.
 # Depends on cloudflare-realip.conf for an accurate $binary_remote_addr.
 limit_req_zone $binary_remote_addr zone=droppy_login:10m rate=5r/m;
+limit_req_status 429;
 
 server {
 	listen 443 ssl http2;
