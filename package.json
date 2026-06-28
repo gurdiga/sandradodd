@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/gurdiga/sandradodd#readme",
   "dependencies": {
-    "droppy": "https://github.com/gurdiga/droppy/archive/refs/tags/12.4.17.tar.gz"
+    "droppy": "https://github.com/gurdiga/droppy/archive/refs/tags/12.4.18.tar.gz"
   }
 }
