@@ -59,19 +59,10 @@ $(DROPPY_EXECUTABLE):
 $(NODE):
 	@echo 'Use nvm to install the latest LTS Node.'
 
-/usr/bin/certbot: /usr/bin/add-apt-repository /etc/apt/sources.list.d/certbot-ubuntu-certbot-bionic.list
-	apt-get install python-certbot-nginx
+/usr/bin/certbot:
+	apt-get install python3-certbot-nginx
 	touch $@
 	@echo There should also be an entry in the crontab file here.
-
-/etc/apt/sources.list.d/certbot-ubuntu-certbot-bionic.list:
-	add-apt-repository ppa:certbot/certbot
-	apt-get update
-	touch $@
-
-/usr/bin/add-apt-repository:
-	apt-get install software-properties-common
-	touch $@
 
 /usr/sbin/nginx:
 	apt-get install nginx
