@@ -1,0 +1,5 @@
+# HTTPS: see ubuntu.sources.
+Types: deb
+URIs: https://mirrors.digitalocean.com/ubuntu/
+Suites: noble noble-updates noble-backports
+Components: main restricted universe multiverse

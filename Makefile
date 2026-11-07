@@ -34,6 +34,8 @@ install: \
 	/etc/logrotate.d/droppy \
 	/etc/apticron/apticron.conf \
 	/etc/cron.d/apticron \
+	/etc/apt/sources.list.d/ubuntu.sources \
+	/etc/apt/sources.list.d/third-party.sources \
 	/usr/bin/unzip \
 	/usr/bin/certbot \
 	$(DROPPY_EXECUTABLE) \
@@ -81,6 +83,12 @@ $(NODE):
 
 /etc/cron.d/apticron:
 	ln -svf $(srcdir)etc/cron.d/apticron $@
+
+/etc/apt/sources.list.d/ubuntu.sources:
+	ln -svf $(srcdir)etc/apt/sources.list.d/ubuntu.sources $@
+
+/etc/apt/sources.list.d/third-party.sources:
+	ln -svf $(srcdir)etc/apt/sources.list.d/third-party.sources $@
 
 /usr/bin/unzip:
 	apt-get install unzip
